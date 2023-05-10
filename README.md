@@ -13,7 +13,7 @@ This repository contains my awesome project that utilizes various programming la
 - CSS 3
 
 ## Project Description
-<h1> Projeto individual </h1>
+<h3> Projeto individual </h3>
 Esse projeto está sendo desenvolvido para apresentar minha evolução e conhecimento sobre as matérias do curso de CCO
 
 ## Installation
