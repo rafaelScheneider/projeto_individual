@@ -1,0 +1,10 @@
+@font-face {
+    font-family: font_now;
+    src: url(../css/now.light.otf);
+}
+*{
+    font-family: font_now;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
