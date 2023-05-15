@@ -25,7 +25,7 @@ li {
 /*Div centralizadora - formatação global*/
 .container {
     display: flex;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
@@ -46,7 +46,7 @@ li {
 
 /*Formatação do banner*/
 .banner {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: url(../img/banner_gift.png);
     background-attachment: fixed;
@@ -61,22 +61,101 @@ li {
     flex-direction: column;
 }
 
-.banner h1 {
-    font-size: 20vh;
-    margin: 0;
-}
-
 .banner p {
     font-size: 7vh;
 
 }
 
-/*Inicio botão entrar*/
-.entrar {
-    background-color: #ffffff;
-    width: 20%;
-    height: 8%;
-    border: none;
-    color: #C8A287;
-    font-size: 5vh;
+/*Fim banner*/
+/*Começo o_que_é*/
+
+.o_que_e{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/black_lotus.png);
+    background-size: cover;
+}
+
+.textos{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.texto1{
+    display: flex;
+    height: 20vh;
+    width: 90vw;
+}
+
+.texto1 h1{
+    color: rgb(235, 235, 235);
+    font-size: 6.5vh;
+    width: 40vh;
+}
+
+.texto1 span{
+    color:rgb(235, 235, 235);
+    font-size: 4.5vh;
+    text-align: justify;
+}
+
+.titulo_image_inte{
+    width: 70vw;
+}
+
+.image_inte img{
+    height: 10vh;
+}
+
+.image_inte span{
+    font-size: 10vh;
+    text-align: justify;
+}
+
+.texto2 span{
+    color:rgb(235, 235, 235);
+    font-size: 4.5vh;
+    height: 80vh;
+    width: 80vw;
+    text-align: justify;
+}
+
+/*Fim o_que_é*/
+/* Começo forja*/
+
+.forja{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/forja.png);
+    background-size:cover;
+}
+
+.ideia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.ideia h1{
+    color: rgb(235, 235, 235);
+    width: 80%;
+    font-size: 6vh;
+    text-align: center;
+}
+
+.ideia button{
+    width: 40vw;
+    height: 17vh;
+    border: 0px;
+    border-radius: 5%;
+    background-image: linear-gradient(to right, #9e6a22, #2741CB);
+    font-size: 8vh;
+    font-family: font_now_bold;
+    color: rgb(235, 235, 235);
 }

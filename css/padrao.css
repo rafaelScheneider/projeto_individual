@@ -2,6 +2,11 @@
     font-family: font_now;
     src: url(../css/now.light.otf);
 }
+
+@font-face {
+    font-family: font_now_bold;
+    src: url(../css/now.medium.otf)
+}
 *{
     font-family: font_now;
     margin: 0;
