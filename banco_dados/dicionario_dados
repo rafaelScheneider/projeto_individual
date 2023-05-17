@@ -1,0 +1,18 @@
+Tabel user:
+user
+idUser: int primary key auto_increment,
+emailUser: varchar(60),
+nomeUser: varchar(50),
+senha: varchar(100)
+
+
+Tabel carta:
+idCarta int primary key auto_increment,
+FkUser int foreign key idUser,
+nome: varchar(40) NOT NULL,
+custo: varchar(10) NOT NULL,
+tipo: varchar(30) NOT NULL,
+superTipo: varchar(20),
+subTipo: varchar(20) NOT NULL,
+cor: varchar(20),
+efeito: varchar(100)
