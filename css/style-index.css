@@ -82,7 +82,7 @@
 .forja{
     height: 100vh;
     width: 100vw;
-    background-image: url(../img/forja.png);
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(../img/forja.png);
     background-size:cover;
 }
 
