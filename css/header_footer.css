@@ -1,0 +1,35 @@
+/*Formatação da navbar*/
+.header {
+    width: 100%;
+    background-color: #000000;
+    border-bottom: 1px solid #ffffff;
+}
+
+li {
+    font-size: 3vh;
+    margin-left: 2vh;
+}
+
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Formatação da navbar*/
+.navbar {
+    color: #ffffff;
+    list-style: none;
+    display: flex;
+    width: 70vh;
+    justify-content: space-around;
+}
+
+.footer{
+    width: 100%;
+    background-color: #000000;
+    border-top: 1px solid #ffffff;
+}
+.footer p{
+    font-size: 3vh;
+}
