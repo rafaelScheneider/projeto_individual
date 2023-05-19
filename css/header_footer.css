@@ -21,7 +21,7 @@ li {
     color: #ffffff;
     list-style: none;
     display: flex;
-    width: 90vh;
+    width: 100vh;
     justify-content: space-around;
 }
 
@@ -35,6 +35,7 @@ li {
     border-top: 1px solid #ffffff;
 }
 .footer p{
+    color: #ffffff;
     font-size: 3vh;
     text-align: center;
 }

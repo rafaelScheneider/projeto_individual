@@ -1,0 +1,29 @@
+.forja .container{
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    width: 100vw;
+    height: 200vh;
+    background-color: black;
+}
+
+.form_1{
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+    width: 90%;
+    height: 20%;
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid rgb(20, 20, 77);
+}
+
+select{
+    height: 5vh;
+    width:10vw;
+    border: 0px;
+    color: #ffffff;
+    background-color: rgb(20, 20, 77);
+    margin-left: 3vh;
+}
