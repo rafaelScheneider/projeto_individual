@@ -82,7 +82,7 @@
 .forja{
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(../img/forja.png);
+    background: linear-gradient(rgba(61, 61, 61, 0.8), rgba(0,0,0)), url(../img/forja.png);
     background-size:cover;
 }
 
@@ -107,7 +107,7 @@
     height: 17vh;
     border: 0px;
     border-radius: 5%;
-    background-image: linear-gradient(to right, #9e6a22, #2741CB);
+    background-image: linear-gradient(to right, #664415, #1b265c);
     font-size: 8vh;
     font-family: font_now_bold;
     color: rgb(235, 235, 235);

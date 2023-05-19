@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/padrao.css">
     <link rel="stylesheet" href="../css/header_footer.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login-MTG</title>
 </head>
 <body>
     <div class="header">
@@ -16,17 +17,20 @@
             </a>
             <ul class="navbar">
                 <li><a href="./sobre_mim.html">Sobre mim</a></li>
-                <li>Cadastro</li>
-                <li>Login</li>
+                <li><a href="./cadastro.html">Cadastro</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./forja.html">Forja</a></li>
+                <li><a href="./dados_forja.html">Dados forja</a></li>
             </ul>
         </div>
     </div>
     <div class="banner">
         <div class="container">
             <div class="banner_content">
-                <div>
-                    input*
-                </div>
+                <h1>LOGIN</h1>
+                Email: <input id="email_ipt">
+                Senha: <input id="senha_ipt">
+                <button onclick="login()"> Logar! </button>
             </div>
         </div>
     </div>
