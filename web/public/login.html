@@ -30,7 +30,7 @@
                 <h1>LOGIN</h1>
                 Email: <input id="email_ipt">
                 Senha: <input id="senha_ipt">
-                <button onclick="login()"> Logar! </button>
+                <button onclick="entrar()"> Logar! </button>
             </div>
         </div>
     </div>
@@ -40,3 +40,56 @@
     </div>
 </body>
 </html>
+
+<script>
+    function entrar() {
+
+        var emailVar = email_ipt.value;
+        var senhaVar = senha_ipt.value;
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    
+                    sessionStorage.ID_USUARIO = json.idFuncionario;
+                    sessionStorage.NOME_USUARIO = json.nomeUser;
+                    sessionStorage.EMAIL_USUARIO = json.emailUser;
+
+                    setTimeout(function () {
+                        window.location = "index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>
