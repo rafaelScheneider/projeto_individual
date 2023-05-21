@@ -18,7 +18,7 @@
             <a href="../public/index.html">
                 <img src="../public/img/planeswalker.png" style="height: 10vh;">
             </a>
-            <p>TESTE</p>
+            <p id="nome_p">TESTE</p>
             <ul class="navbar">
                 <li><a href="../public/sobre_mim.html">Sobre mim</a></li>
                 <li><a href="../public/cadastro.html">Cadastro</a></li>
@@ -83,5 +83,13 @@
 </html>
 
 <script>
-
+    check_logado()
+    function check_logado(){
+        if(sessionStorage.ID_USUARIO != undefined){
+            nome_p.innerHTML = sessionStorage.ID_USUARIO
+        }
+        else{
+            nome_p.innerHTML = ""
+        }
+    }
 </script>

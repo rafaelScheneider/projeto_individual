@@ -71,6 +71,7 @@
                     sessionStorage.EMAIL_USUARIO = json.emailUser;
 
                     setTimeout(function () {
+                        alert('LOGIN REALIZADO COM SUCESSO!!')
                         window.location = "index.html";
                     }, 1000); // apenas para exibir o loading
 
@@ -87,6 +88,7 @@
             }
 
         }).catch(function (erro) {
+            alert(erro)
             console.log(erro);
         })
 
