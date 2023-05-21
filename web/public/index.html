@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/style-index.css">
-    <link rel="stylesheet" href="../public/css/padrao.css">
-    <link rel="stylesheet" href="../public/css/header_footer.css">
+    <link rel="stylesheet" href="./css/style-index.css">
+    <link rel="stylesheet" href="./css/padrao.css">
+    <link rel="stylesheet" href="./css/header_footer.css">
     <title>Home-MTG</title>
 </head>
 
@@ -15,16 +15,16 @@
     <!--Inicio do navbar-->
     <div class="header">
         <div class="container">
-            <a href="../public/index.html">
-                <img src="../public/img/planeswalker.png" style="height: 10vh;">
+            <a href="./index.html">
+                <img src="./img/planeswalker.png" style="height: 10vh;">
             </a>
             <p id="nome_p">TESTE</p>
             <ul class="navbar">
-                <li><a href="../public/sobre_mim.html">Sobre mim</a></li>
-                <li><a href="../public/cadastro.html">Cadastro</a></li>
-                <li><a href="../public/login.html">Login</a></li>
-                <li><a href="../public/forja.html">Forja</a></li>
-                <li><a href="../public/dados_forja.html">Dados forja</a></li>
+                <li><a href="./sobre_mim.html">Sobre mim</a></li>
+                <li><a href="./cadastro.html">Cadastro</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./forja.html">Forja</a></li>
+                <li><a href="./dados_forja.html">Dados forja</a></li>
             </ul>
         </div>
     </div>
@@ -46,7 +46,7 @@
                     <div class="titulo_image_inte">
                         <h1>O que é:</h1>
                         <div class="image_inte">
-                            <img src="../public/img/title_mtg.png" style="height: 10vh;"> 
+                            <img src="./img/title_mtg.png" style="height: 10vh;"> 
                             <span>?</span>
                         </div>
                     </div>
@@ -85,8 +85,8 @@
 <script>
     check_logado()
     function check_logado(){
-        if(sessionStorage.ID_USUARIO != undefined){
-            nome_p.innerHTML = sessionStorage.ID_USUARIO
+        if(sessionStorage.NOME_USUARIO != undefined){
+            nome_p.innerHTML = sessionStorage.NOME_USUARIO
         }
         else{
             nome_p.innerHTML = ""

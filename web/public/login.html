@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/padrao.css">
-    <link rel="stylesheet" href="../public/css/header_footer.css">
-    <link rel="stylesheet" href="../public/css/login.css">
+    <link rel="stylesheet" href="./css/padrao.css">
+    <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="stylesheet" href="./css/login.css">
     <title>Login-MTG</title>
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <a href="../public/index.html">
-                <img src="../public/img/planeswalker.png" style="height: 10vh;">
+            <a href="./index.html">
+                <img src="./img/planeswalker.png" style="height: 10vh;">
             </a>
+            <p id="nome_p">TESTE</p>
             <ul class="navbar">
-                <li><a href="../public/sobre_mim.html">Sobre mim</a></li>
-                <li><a href="../public/cadastro.html">Cadastro</a></li>
-                <li><a href="../public/login.html">Login</a></li>
-                <li><a href="../public/forja.html">Forja</a></li>
-                <li><a href="../public/dados_forja.html">Dados forja</a></li>
+                <li><a href="./sobre_mim.html">Sobre mim</a></li>
+                <li><a href="./cadastro.html">Cadastro</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./forja.html">Forja</a></li>
+                <li><a href="./dados_forja.html">Dados forja</a></li>
             </ul>
         </div>
     </div>
@@ -42,6 +43,15 @@
 </html>
 
 <script>
+    check_logado()
+    function check_logado(){
+        if(sessionStorage.NOME_USUARIO != undefined){
+            nome_p.innerHTML = sessionStorage.NOME_USUARIO
+        }
+        else{
+            nome_p.innerHTML = ""
+        }
+    }
     function entrar() {
 
         var emailVar = email_ipt.value;
@@ -66,7 +76,7 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
                     
-                    sessionStorage.ID_USUARIO = json.idFuncionario;
+                    sessionStorage.ID_USUARIO = json.idUser;
                     sessionStorage.NOME_USUARIO = json.nomeUser;
                     sessionStorage.EMAIL_USUARIO = json.emailUser;
 
