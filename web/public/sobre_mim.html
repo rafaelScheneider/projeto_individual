@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./css/padrao.css">
     <link rel="stylesheet" href="./css/header_footer.css">
     <link rel="stylesheet" href="./css/style_sobre_mim.css">
@@ -35,7 +36,24 @@
             </div>
         </div>
     </div>
-
+    <div class="info1">
+        <div class="container">
+            <div class="info1_content">
+                <span>Minhas cores favoritas no Magic são o preto e branco (sendo a minha guilda favorita a Orzhov!) por conta de poder 
+                    usar a vida e criaturas no meu campo como recurso para controle e compra de cartas!
+                </span>
+                <img src="./img/roda_cores.png">
+            </div>
+        </div>
+    </div>
+    <div class="info2">
+        <div class="container">
+            <div class="info2_content">
+                <canvas id="myChart"></canvas>
+                <span>Aqui são as cores que meus decks! (Meus decks são de commander, sendo eles: Strefan, Brago, Krav/Regna, Jodah, Moira e Teshar) </span>
+            </div>
+        </div>
+    </div>
     <div class="footer">
         <p>Email: rafael.ranaudo@sptech.school</p>
     </div>
@@ -51,4 +69,25 @@
             nome_p.innerHTML = ""
         }
     }
+    var data = {
+        labels: ['Branco', 'Azul', 'Preto', 'Vermelho', 'Verde'],
+        datasets: [{
+          data: [4, 2 , 4, 2,1],
+          backgroundColor: ['rgb(248, 231, 185)', 'rgb(14, 104, 171)', 'rgb(100, 100 , 100)','rgb(235, 100, 100)','rgb(0, 115, 62)']
+        }]
+      };
+  
+      // Configurações do gráfico
+      var options = {
+        responsive: true
+      };
+  
+      // Criação do gráfico de pizza
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: options
+      });
+
 </script>
