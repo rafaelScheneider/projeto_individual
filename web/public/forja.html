@@ -28,17 +28,28 @@
     <div class="forja">
         <div class="container">
             <div class="form_1">
-                <select name="cores" onchange="cor_carta()" id="cor">
-                    <option value="preto">Preto</option>
-                    <option value="branco">Branco</option>
-                    <option value="vermelho">Vermelho</option>
-                    <option value="verde">Verde</option>
-                    <option value="azul">azul</option>
-                    <option value="incolor">incolor</option>
-                </select>
+                <div class="selects">
+                    <select name="cores" onchange="cor_carta()" id="cor">
+                        <option value="preto">Preto</option>
+                        <option value="branco">Branco</option>
+                        <option value="vermelho">Vermelho</option>
+                        <option value="verde">Verde</option>
+                        <option value="azul">azul</option>
+                        <option value="incolor">incolor</option>
+                    </select>
+                    <select name="tipo" onchange="cor_carta()" id="tipo">
+                        <option value="criatura">Criatura</option>
+                        <option value="inst">Instantanea</option>
+                        <option value="feitico"> Feitiço</option>
+                    </select>
+                </div>
                 <div class="card">
                     <img id="fundo" src='./img/black_card.png'>
                     <input type="text" class="nome" id="carta_nome">
+                    <input type="text" class="mana" id="carta_mana">
+                    <input type="text" class="tipo" id="carta_tipo">
+                    <textarea type="text" class="texto" id="carta_texto"></textarea>
+
                 </div>
             </div>
         </div>
@@ -60,23 +71,29 @@
     }
 
     function cor_carta() {
+        let fundo_tipo = ""
+
+        if (tipo.value != 'criatura'){
+            fundo_tipo = '_inst'
+        }
+
         if(cor.value == 'preto'){
-            fundo.src = `./img/black_card.png`
+            fundo.src = `./img/black${fundo_tipo}_card.png`
         }
         else if(cor.value == 'branco'){
-            fundo.src = `./img/white_card.png`
+            fundo.src = `./img/white${fundo_tipo}_card.png`
         }
         else if(cor.value == 'verde'){
-            fundo.src = `./img/green_card.png`
+            fundo.src = `./img/green${fundo_tipo}_card.png`
         }
         else if(cor.value == 'vermelho'){
-            fundo.src = `./img/red_card.png`
+            fundo.src = `./img/red${fundo_tipo}_card.png`
         }
         else if(cor.value == 'azul'){
-            fundo.src = `./img/blue_card.png`
+            fundo.src = `./img/blue${fundo_tipo}_card.png`
         }
         else if(cor.value == 'incolor'){
-            fundo.src = `./img/colorless_card.png`
+            fundo.src = `./img/colorless${fundo_tipo}_card.png`
         }
     }
 </script>
