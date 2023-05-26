@@ -15,8 +15,8 @@
     width: 90%;
     height: 40%;
     display: flex;
-    border-radius: 20px;
-    border: 1px solid rgb(20, 20, 77);
+    border-radius: 2vh;
+    border: 0.2vh solid rgb(20, 20, 77);
     justify-content:space-around
 }
 
@@ -44,54 +44,81 @@ select{
 .nome{
     position:absolute;
     top: 25vh;
-    left:53vw; 
+    left:52.2vw; 
     background-color: #ffffff00;
-    height: 4vh;
-    width: 17vw;
-    font-size: 3vh;
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    height: 4.5vh;
+    width: 18vw;
 }
 
 .mana{
     position:absolute;
     top: 25vh;
-    left:71vw; 
+    left:70.1vw; 
     background-color: #ffffff00;
-    height: 4vh;
-    width: 5vw;
-    font-size: 3vh;
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    height: 4.5vh;
+    width: 5.6vw;
+    text-align: right;
 }
 
 .tipo{
     position:absolute;
     top: 65.5vh;
-    left:53vw; 
+    left:52.4vw; 
     background-color: #ffffff00;
-    height: 4vh;
-    width: 22.3vw;
-    font-size: 3vh;
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    height: 4.5vh;
+    width: 23.3vw;
 }
 
 .texto{
     position:absolute;
     top: 71vh;
-    left:53vw; 
+    left:52.7vw; 
     background-color: #ffffff00;
-    height: 20vh;
-    width: 22.3vw;
+    height: 21vh;
+    width: 22.5vw;
     font-size: 3vh;
     color: rgb(0, 0, 0);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 0.2vh solid rgb(36, 36, 36);
+    border-radius: 1vh ;
+}
+
+.poder{
+    position:absolute;
+    top: 92vh;
+    left:70.8vw; 
+    background-color: #ffffff00;
+    height: 4.5vh;
+    width: 2.2vw;
+    text-align: center;
+}
+.resist{
+    position:absolute;
+    top: 92vh;
+    left:73.4vw; 
+    background-color: #ffffff00;
+    height: 4.5vh;
+    width: 2.2vw;
+    text-align: center;
+}
+
+input{
+    font-size: 3vh;
+    color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 0.2vh solid rgb(36, 36, 36);
+    border-radius: 1vh;
 }
 
 .selects{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 5vh;
-    
+}
+
+button{
+    height: 5vh;
+    width: 9vw;
 }

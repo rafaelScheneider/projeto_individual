@@ -42,6 +42,8 @@
                         <option value="inst">Instantanea</option>
                         <option value="feitico"> Feitiço</option>
                     </select>
+
+                    <button onclick="check()">Cadastrar carta!</button>
                 </div>
                 <div class="card">
                     <img id="fundo" src='./img/black_card.png'>
@@ -49,7 +51,8 @@
                     <input type="text" class="mana" id="carta_mana">
                     <input type="text" class="tipo" id="carta_tipo">
                     <textarea type="text" class="texto" id="carta_texto"></textarea>
-
+                    <input type="text" class="poder" id="carta_poder">
+                    <input type="text" class="resist" id="carta_resist">
                 </div>
             </div>
         </div>
@@ -75,6 +78,16 @@
 
         if (tipo.value != 'criatura'){
             fundo_tipo = '_inst'
+            carta_resist.value = ""
+            carta_resist.style.display = "none"
+            carta_poder.value = ""
+            carta_poder.style.display = "none"
+        }
+        else{
+            carta_resist.value = ""
+            carta_resist.style.display = "block"
+            carta_poder.value = ""
+            carta_poder.style.display = "block"
         }
 
         if(cor.value == 'preto'){
@@ -95,5 +108,68 @@
         else if(cor.value == 'incolor'){
             fundo.src = `./img/colorless${fundo_tipo}_card.png`
         }
+    }
+
+    function check() {
+        if(sessionStorage.NOME_USUARIO == undefined){
+            alert('Você tem que se logar primeiro para criar uma carta')
+        }
+        else{ 
+            let nome = carta_nome.value
+            let mana = carta_mana.value
+            let tipo = carta_tipo.value
+            let texto = carta_texto.value
+            let poder = carta_poder.value
+            let resist = carta_resist.value
+
+            if (tipo.value != 'criatura'){
+                if (nome, mana, tipo, texto == "" || nome == ""){
+                    alert('Coloque todos os campos!!')
+                }
+                else{
+                    cadastrar(nome, mana, tipo, texto, null, null)
+                }
+            }
+            else{
+                if (nome, mana, tipo, texto, poder, resist == "" || nome == ""){
+                    alert('Coloque todos os campos!!')
+                }
+                else{
+                    cadastrar(nome, mana, tipo, texto, poder, resist, cor.value)
+                }
+            }
+        }
+    }
+
+    function cadastrar(nome, mana, tipo, texto, poder, resist, cor){
+        fetch("/carta/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idUserServer : sessionStorage.ID_USUARIO,
+                nomeServer: nome,
+                manaServer: mana,
+                tipoServer: tipo,
+                textoServer: texto,
+                poderServer: poder,
+                resistServer: resist,
+                corServer : cor
+            })
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+            if (resposta.ok) {
+                alert('CADASTRO FEITO COM SUCESSO!')
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            alert(resposta)
+            console.log(`#ERRO: ${resposta}`);
+        });
+        return false;
     }
 </script>
