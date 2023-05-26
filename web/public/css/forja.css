@@ -48,6 +48,7 @@ select{
     background-color: #ffffff00;
     height: 4.5vh;
     width: 18vw;
+    color: rgb(17, 17, 17);
 }
 
 .mana{
@@ -104,10 +105,9 @@ select{
 
 input{
     font-size: 3vh;
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: 0.2vh solid rgb(36, 36, 36);
     border-radius: 1vh;
+    color: black;
 }
 
 .selects{
@@ -121,4 +121,6 @@ input{
 button{
     height: 5vh;
     width: 9vw;
+    color: black;
+    background-color: rgb(20, 20, 77);
 }
