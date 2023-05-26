@@ -1,3 +1,8 @@
+drop database proj_indiv;
+select * from user;
+
+
+
 create database proj_indiv;
 use proj_indiv;
 
@@ -5,7 +10,7 @@ CREATE TABLE user (
   idUser INT PRIMARY KEY AUTO_INCREMENT,
   emailUser VARCHAR(60),
   nomeUser VARCHAR(50),
-  senha VARCHAR(100)
+  senha VARCHAR(100) unique
 );
 
 CREATE TABLE carta (

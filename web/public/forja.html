@@ -28,13 +28,18 @@
     <div class="forja">
         <div class="container">
             <div class="form_1">
-                <select name="cores" id="cor">
+                <select name="cores" onchange="cor_carta()" id="cor">
                     <option value="preto">Preto</option>
                     <option value="branco">Branco</option>
                     <option value="vermelho">Vermelho</option>
                     <option value="verde">Verde</option>
                     <option value="azul">azul</option>
+                    <option value="incolor">incolor</option>
                 </select>
+                <div class="card">
+                    <img id="fundo" src='./img/black_card.png'>
+                    <input type="text" class="nome" id="carta_nome">
+                </div>
             </div>
         </div>
     </div>
@@ -51,6 +56,27 @@
         }
         else{
             nome_p.innerHTML = ""
+        }
+    }
+
+    function cor_carta() {
+        if(cor.value == 'preto'){
+            fundo.src = `./img/black_card.png`
+        }
+        else if(cor.value == 'branco'){
+            fundo.src = `./img/white_card.png`
+        }
+        else if(cor.value == 'verde'){
+            fundo.src = `./img/green_card.png`
+        }
+        else if(cor.value == 'vermelho'){
+            fundo.src = `./img/red_card.png`
+        }
+        else if(cor.value == 'azul'){
+            fundo.src = `./img/blue_card.png`
+        }
+        else if(cor.value == 'incolor'){
+            fundo.src = `./img/colorless_card.png`
         }
     }
 </script>
