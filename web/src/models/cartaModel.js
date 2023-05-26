@@ -6,14 +6,13 @@ function cadastrar(idUser, nome, mana, tipo, texto, poder, resist, cor) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO user (fkUser, nome, custo, tipo, cor, poder, resist, texto) 
-        VALUES (${idUser},'${nome}','${mana}','${tipo}','${cor}' ,'${poder}','${resist}','${texto}}');
+        INSERT INTO carta (fkUser, nome, custo, tipo, cor, poder, resist, texto) 
+        VALUES (${idUser},'${nome}','${mana}','${tipo}','${cor}' ,${poder},${resist},'${texto}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 module.exports = {
-    cadastrar,
-    entrar
+    cadastrar
 };

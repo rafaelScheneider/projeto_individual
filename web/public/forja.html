@@ -37,7 +37,7 @@
                         <option value="azul">azul</option>
                         <option value="incolor">incolor</option>
                     </select>
-                    <select name="tipo" onchange="cor_carta()" id="tipo">
+                    <select onchange="cor_carta()" id="tipo">
                         <option value="criatura">Criatura</option>
                         <option value="inst">Instantanea</option>
                         <option value="feitico"> Feitiço</option>
@@ -63,6 +63,8 @@
 </body>
 </html>
 <script>
+    var tipo_carta = tipo.value
+    var tipo_cor = cor.value
     check_logado()
     function check_logado(){
         if(sessionStorage.NOME_USUARIO != undefined){
@@ -108,6 +110,8 @@
         else if(cor.value == 'incolor'){
             fundo.src = `./img/colorless${fundo_tipo}_card.png`
         }
+        tipo_carta = tipo.value
+        tipo_cor = cor.value
     }
 
     function check() {
@@ -121,13 +125,12 @@
             let texto = carta_texto.value
             let poder = carta_poder.value
             let resist = carta_resist.value
-
-            if (tipo.value != 'criatura'){
+            if (tipo_carta != 'criatura'){
                 if (nome, mana, tipo, texto == "" || nome == ""){
                     alert('Coloque todos os campos!!')
                 }
                 else{
-                    cadastrar(nome, mana, tipo, texto, null, null)
+                    cadastrar(nome, mana, tipo, texto, null, null, tipo_cor)
                 }
             }
             else{
@@ -135,7 +138,7 @@
                     alert('Coloque todos os campos!!')
                 }
                 else{
-                    cadastrar(nome, mana, tipo, texto, poder, resist, cor.value)
+                    cadastrar(nome, mana, tipo, texto, poder, resist, tipo_cor)
                 }
             }
         }

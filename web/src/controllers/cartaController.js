@@ -1,4 +1,4 @@
-var usuarioModel = require("../models/usuarioModel");
+var cartaModel = require("../models/cartaModel");
 
 var sessoes = [];
 
@@ -12,7 +12,7 @@ function cadastrar(req, res) {
     var resist = req.body.resistServer
     var cor = req.body.corServer
 
-    usuarioModel.cadastrar(idUser, nome, mana, tipo, texto, poder, resist, cor).then(
+    cartaModel.cadastrar(idUser, nome, mana, tipo, texto, poder, resist, cor).then(
         function (resultado) {
             res.json(resultado);
         }
@@ -30,6 +30,5 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    cadastrar,
-    entrar
+    cadastrar
 }

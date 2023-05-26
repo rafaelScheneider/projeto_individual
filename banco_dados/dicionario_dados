@@ -13,4 +13,6 @@ nome: varchar(40) NOT NULL,
 custo: varchar(10) NOT NULL,
 tipo: varchar(60) NOT NULL,
 cor: varchar(20),
+poder SMALLINT,
+resist SMALLINT,
 efeito: varchar(100)
