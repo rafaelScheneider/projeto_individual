@@ -23,6 +23,6 @@ CREATE TABLE carta (
   cor VARCHAR(20),
   poder SMALLINT,
   resist SMALLINT,
-  texto VARCHAR(100),
+  texto VARCHAR(400),
   FOREIGN KEY (FkUser) REFERENCES user(idUser)
 );
