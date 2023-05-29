@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
             <a href="./index.html">
                 <img src="./img/planeswalker.png" style="height: 10vh;">
             </a>
-            <p id="nome_p">TESTE</p>
+            <p id="nome_p" class="nome_p">TESTE</p>
             <ul class="navbar">
                 <li><a href="./sobre_mim.html">Sobre mim</a></li>
                 <li><a href="./cadastro.html">Cadastro</a></li>
@@ -34,8 +34,14 @@
                         <ul id="lista_ul">
                         </ul>
                     </div>
-                    <div class="carta" id="carta">
-
+                    <div class="carta" id="carta" style="display: none;">
+                        <img id="fundo" src='./img/black_card.png'>
+                        <span id="carta_nome" class="nome">teste</span>
+                        <span id="carta_mana" class="mana">teste</span>
+                        <span id="carta_tipo" class="tipo">teste</span>
+                        <span id="carta_texto" class="texto">teste</span>
+                        <span id="carta_poder" class="poder">1</span>
+                        <span id="carta_resist" class="resist">1</span>
                     </div>
                 </div>
             </div>
@@ -72,7 +78,11 @@
                 resposta.json().then(json => {
                     for(i in json){
                         lista_ul.innerHTML += `
-                            <li>Nome:${json[i].nome}, Tipo:${json[i].tipo}</li>
+                            <li onmouseover="teste('${json[i].nome}','${json[i].custo}','${json[i].tipo}',
+                                                   '${json[i].texto}', '${json[i].poder}','${json[i].resist}',
+                                                   '${json[i].cor}','${json[i].tipoEstrutura}')">
+                                Nome:${json[i].nome}, Tipo:${json[i].tipo}
+                            </li>
                         `
 
                     }
@@ -89,5 +99,42 @@
         })
 
         return false;
+    }
+
+    function teste(nome, mana, tipo, texto, poder, resist, cor, tipo_carta_estrutura){
+        carta.style.display = 'flex'
+        if (tipo_carta_estrutura != 'criatura'){
+            var tipo_carta_estrutura_img = '_inst'
+            resist = ''
+            poder = ''
+            console.log('teste')
+        }
+        else{
+            var tipo_carta_estrutura_img = ''
+        }
+        if(cor == 'preto'){
+            fundo.src = `./img/black${tipo_carta_estrutura_img}_card.png`
+        }
+        else if(cor == 'branco'){
+            fundo.src = `./img/white${tipo_carta_estrutura_img}_card.png`
+        }
+        else if(cor == 'verde'){
+            fundo.src = `./img/green${tipo_carta_estrutura_img}_card.png`
+        }
+        else if(cor == 'vermelho'){
+            fundo.src = `./img/red${tipo_carta_estrutura_img}_card.png`
+        }
+        else if(cor == 'azul'){
+            fundo.src = `./img/blue${tipo_carta_estrutura_img}_card.png`
+        }
+        else if(cor == 'incolor'){
+            fundo.src = `./img/colorless${tipo_carta_estrutura_img}_card.png`
+        }
+        carta_nome.innerHTML = nome
+        carta_mana.innerHTML = mana
+        carta_tipo.innerHTML = tipo
+        carta_texto.innerHTML = texto
+        carta_poder.innerHTML = poder
+        carta_resist.innerHTML = resist
     }
 </script>

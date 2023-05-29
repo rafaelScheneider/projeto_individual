@@ -15,7 +15,7 @@
             <a href="./index.html">
                 <img src="./img/planeswalker.png" style="height: 10vh;">
             </a>
-            <p id="nome_p">TESTE</p>
+            <p id="nome_p" class="nome_p">TESTE</p>
             <ul class="navbar">
                 <li><a href="./sobre_mim.html">Sobre mim</a></li>
                 <li><a href="./cadastro.html">Cadastro</a></li>
@@ -31,7 +31,7 @@
                 <h1>CADASTRO</h1>
                 <span> Nome:</span> <input id="nome_ipt">
                 <span> Email:</span> <input id="email_ipt">
-                <span> Senha:</span> <input id="senha_ipt">
+                <span> Senha:</span> <input id="senha_ipt" type="password   ">
                 <button onclick="cadastrar()"> Finalizar cadastro </button>
             </div>
         </div>
@@ -55,6 +55,10 @@
     }
 
     function cadastrar() {
+        if (nome_ipt.value == '' || email_ipt.value == '' || senha_ipt.value == ''){
+            alert('Coloque os valores nos campos!')
+            return
+        }
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {

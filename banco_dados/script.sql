@@ -19,6 +19,7 @@ CREATE TABLE carta (
   nome VARCHAR(40) NOT NULL,
   custo VARCHAR(10) NOT NULL,
   tipo VARCHAR(60) NOT NULL,
+  tipoEstrutura VARCHAR(30) NOT NULL, 
   cor VARCHAR(20),
   poder SMALLINT,
   resist SMALLINT,

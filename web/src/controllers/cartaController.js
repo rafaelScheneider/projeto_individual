@@ -11,8 +11,10 @@ function cadastrar(req, res) {
     var poder = req.body.poderServer
     var resist = req.body.resistServer
     var cor = req.body.corServer
+    var tipoEstrutua = req.body.tipoEstruturaServer
+    console.log(tipoEstrutua)
 
-    cartaModel.cadastrar(idUser, nome, mana, tipo, texto, poder, resist, cor).then(
+    cartaModel.cadastrar(idUser, nome, mana, tipo, texto, poder, resist, cor, tipoEstrutua).then(
         function (resultado) {
             res.json(resultado);
         }

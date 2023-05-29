@@ -15,7 +15,7 @@
             <a href="./index.html">
                 <img src="./img/planeswalker.png" style="height: 10vh;">
             </a>
-            <p id="nome_p">TESTE</p>
+            <p id="nome_p" class="nome_p">TESTE</p>
             <ul class="navbar">
                 <li><a href="./sobre_mim.html">Sobre mim</a></li>
                 <li><a href="./cadastro.html">Cadastro</a></li>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="card">
                     <img id="fundo" src='./img/black_card.png'>
-                    <input type="text" class="nome" id="carta_nome" style="color: black;">
+                    <input type="text" class="nome" id="carta_nome" oninput="diminuir('carta_nome')">
                     <input type="text" class="mana" id="carta_mana">
                     <input type="text" class="tipo" id="carta_tipo">
                     <textarea type="text" class="texto" id="carta_texto"></textarea>
@@ -65,6 +65,14 @@
     var tipo_carta = tipo.value
     var tipo_cor = cor.value
     check_logado()
+
+    function diminuir(id){
+        elemento = document.getElementById(id)
+        console.log(3.5 -((elemento.value.length - 18)/4.5))
+        if (elemento.value.length > 17){
+            elemento.style.fontSize = `${3.5 -((elemento.value.length - 18)/4.5)}vh`
+        }
+    }
     function check_logado(){
         if(sessionStorage.NOME_USUARIO != undefined){
             nome_p.innerHTML = sessionStorage.NOME_USUARIO
@@ -159,7 +167,8 @@
                 textoServer: texto,
                 poderServer: poder,
                 resistServer: resist,
-                corServer : cor
+                corServer : cor,
+                tipoEstruturaServer : tipo_carta
             })
         }).then(function (resposta) {
             console.log("resposta: ", resposta);

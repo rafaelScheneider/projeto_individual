@@ -44,10 +44,10 @@ select{
 .nome{
     position:absolute;
     top: 25vh;
-    left:52.2vw; 
+    left:52.9vw; 
     background-color: #ffffff00;
     height: 4.5vh;
-    width: 18vw;
+    width: 17vw;
     color: rgb(17, 17, 17);
 }
 
@@ -57,23 +57,23 @@ select{
     left:70.1vw; 
     background-color: #ffffff00;
     height: 4.5vh;
-    width: 5.6vw;
+    width: 5.2vw;
     text-align: right;
 }
 
 .tipo{
     position:absolute;
     top: 65.5vh;
-    left:52.4vw; 
+    left:52.9vw; 
     background-color: #ffffff00;
     height: 4.5vh;
-    width: 23.3vw;
+    width: 22.4vw;
 }
 
 .texto{
     position:absolute;
     top: 71vh;
-    left:52.7vw; 
+    left:52.9vw; 
     background-color: #ffffff00;
     height: 21vh;
     width: 22.5vw;
@@ -87,7 +87,7 @@ select{
 .poder{
     position:absolute;
     top: 92vh;
-    left:70.8vw; 
+    left:70.5vw;
     background-color: #ffffff00;
     height: 4.5vh;
     width: 2.2vw;
@@ -96,7 +96,7 @@ select{
 .resist{
     position:absolute;
     top: 92vh;
-    left:73.4vw; 
+    left:72.9vw; 
     background-color: #ffffff00;
     height: 4.5vh;
     width: 2.2vw;
@@ -123,4 +123,6 @@ button{
     width: 9vw;
     color: black;
     background-color: rgb(20, 20, 77);
+    margin: 0px solid black;
+    color: white;
 }
