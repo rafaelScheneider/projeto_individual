@@ -29,7 +29,15 @@
     <div class="banner">
         <div class="container">
             <div class="banner_content">
-                
+                <div id="lista_cartas" class="lista_cartas">
+                    <div id="lista" class="lista">
+                        <ul id="lista_ul">
+                        </ul>
+                    </div>
+                    <div class="carta" id="carta">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -40,6 +48,7 @@
 </html>
 <script>
     check_logado()
+    listar_cartas()
     function check_logado(){
         if(sessionStorage.NOME_USUARIO != undefined){
             nome_p.innerHTML = sessionStorage.NOME_USUARIO
@@ -47,5 +56,38 @@
         else{
             nome_p.innerHTML = ""
         }
+    }
+    function listar_cartas() {
+        fetch("/carta/listar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    for(i in json){
+                        lista_ul.innerHTML += `
+                            <li>Nome:${json[i].nome}, Tipo:${json[i].tipo}</li>
+                        `
+
+                    }
+                });
+            } else {
+                console.log("Houve um erro ao tentar consultar as plantações");
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
 </script>

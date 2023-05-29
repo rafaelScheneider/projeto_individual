@@ -7,5 +7,8 @@ router.post('/cadastrar', function(req,res) {
     cartaController.cadastrar(req, res)
 })
 
+router.post('/listar', function(req,res) {
+    cartaController.listar(req, res)
+})
 
 module.exports = router;
