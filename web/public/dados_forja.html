@@ -40,8 +40,7 @@
                         <span id="carta_mana" class="mana">teste</span>
                         <span id="carta_tipo" class="tipo">teste</span>
                         <span id="carta_texto" class="texto">teste</span>
-                        <span id="carta_poder" class="poder">1</span>
-                        <span id="carta_resist" class="resist">1</span>
+                        <span id="carta_poder_resist" class="poder_resist">1</span>
                     </div>
                 </div>
             </div>
@@ -134,7 +133,6 @@
         carta_mana.innerHTML = mana
         carta_tipo.innerHTML = tipo
         carta_texto.innerHTML = texto
-        carta_poder.innerHTML = poder
-        carta_resist.innerHTML = resist
+        carta_poder_resist.innerHTML = `${poder}/${resist}`
     }
 </script>
