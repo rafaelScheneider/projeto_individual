@@ -30,9 +30,16 @@
         <div class="container">
             <div class="banner_content">
                 <div id="lista_cartas" class="lista_cartas">
+                    <div class="filtros">
+                    </div>
                     <div id="lista" class="lista">
-                        <ul id="lista_ul">
-                        </ul>
+                        <div>
+                            <input type="checkbox" id="condicao1" value="minhas" onclick="teste()">Ver as minhas cartas
+                        </div><br>
+                        <div>
+                            <ul id="lista_ul">
+                            </ul>
+                        </div>
                     </div>
                     <div class="carta" id="carta" style="display: none;">
                         <img id="fundo" src='./img/black_card.png'>
@@ -46,14 +53,57 @@
             </div>
         </div>
     </div>
+
+    <div class="grafico">
+        <div class="container">
+            <div class="grafico_content">
+                <div class="texto_grafico">
+                    Qual o tipo de estrutura de carta que as pessoas mais gostam:
+                </div>
+                <canvas id="myChart" class="grafico_elemento"></canvas>
+            </div>
+        </div>
+    </div>
     <div class="footer">
         <p>Email: rafael.ranaudo@sptech.school</p>
     </div>
 </body>
 </html>
 <script>
-    check_logado()
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+                labels: ['Cartas criatura', 'Outros'],
+                datasets: [{
+                    data: [0,0],
+                    backgroundColor: ['rgb(248, 231, 185)', 'rgb(14, 104, 171)']
+                }]
+        },
+        options: {
+            responsive:true
+        }
+    });
+
+    var json_global = undefined
+    var check = 1
+
+
     listar_cartas()
+
+    function teste(){
+        if(check == 1){
+            check = -1
+            condicao = true
+        }
+        else{
+            check = 1
+            condicao = false
+        }
+        mostrar_cartas(json_global, condicao)
+    }
+
+    check_logado()
     function check_logado(){
         if(sessionStorage.NOME_USUARIO != undefined){
             nome_p.innerHTML = sessionStorage.NOME_USUARIO
@@ -62,7 +112,8 @@
             nome_p.innerHTML = ""
         }
     }
-    function listar_cartas() {
+
+    function listar_cartas() { 
         fetch("/carta/listar", {
             method: "POST",
             headers: {
@@ -72,20 +123,11 @@
             })
         }).then(function (resposta) {
             if (resposta.ok) {
-                console.log(resposta);
-
                 resposta.json().then(json => {
-                    for(i in json){
-                        lista_ul.innerHTML += `
-                            <li onmouseover="teste('${json[i].nome}','${json[i].custo}','${json[i].tipo}',
-                                                   '${json[i].texto}', '${json[i].poder}','${json[i].resist}',
-                                                   '${json[i].cor}','${json[i].tipoEstrutura}')">
-                                Nome:${json[i].nome}, Tipo:${json[i].tipo}
-                            </li>
-                        `
-
-                    }
+                    mostrar_cartas(json)
+                    json_global = json
                 });
+            
             } else {
                 console.log("Houve um erro ao tentar consultar as plantações");
                 resposta.text().then(texto => {
@@ -100,13 +142,39 @@
         return false;
     }
 
-    function teste(nome, mana, tipo, texto, poder, resist, cor, tipo_carta_estrutura){
+
+    function mostrar_cartas(json, condicao){
+        lista_ul.innerHTML = ""
+        let check = true
+        for(i in json){
+            if(condicao == true){
+                check = json[i].FkUser == sessionStorage.ID_USUARIO
+            }
+            if(check){
+                lista_ul.innerHTML += `
+                    <li onmouseover="mudar_carta('${json[i].nome}','${json[i].custo}','${json[i].tipo}',
+                                        '${String(json[i].texto).replaceAll(`"`, "")}', '${json[i].poder}','${json[i].resist}',
+                                        '${json[i].cor}','${json[i].tipoEstrutura}')">
+                        Nome:${json[i].nome}, Tipo:${json[i].tipo}
+                    </li>
+                `
+            }
+            if(json[i].tipoEstrutura != 'criatura'){
+                myChart.data.datasets[0].data[1]++
+            }
+            else{
+                myChart.data.datasets[0].data[0]++
+            }   
+            myChart.update()
+        }
+    }
+
+    function mudar_carta(nome, mana, tipo, texto, poder, resist, cor, tipo_carta_estrutura){
         carta.style.display = 'flex'
         if (tipo_carta_estrutura != 'criatura'){
             var tipo_carta_estrutura_img = '_inst'
             resist = ''
             poder = ''
-            console.log('teste')
         }
         else{
             var tipo_carta_estrutura_img = ''

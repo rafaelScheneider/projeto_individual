@@ -22,6 +22,7 @@ span {
     display: flex;
     height: 90vh;
     width: 70vw;
+    border-radius: 50%;
 }
 
 .lista_cartas{
@@ -29,14 +30,16 @@ span {
     width: 100vw;
     height: 100%;
     background-color: rgb(49, 49, 49);
+    border-radius: 2vh;
 }
 
 .lista{
-    margin-left: 1vw;
+    margin-left: 4vw;
     margin-top: 5vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     width: 50%;
+    border-radius: 2vh;
 }
 
 li{
@@ -109,4 +112,35 @@ li{
     width: 2.2vw;
     text-align: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grafico{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #111111;
+}
+
+.grafico .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    flex-direction: column;
+}
+
+.grafico_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    background-color: #363636;
+    border-radius: 4vhs;
+}
+
+.texto_grafico{
+    margin-left: 4vw;
+    margin-right: 4vw;
+    font-size: 6vh;
 }
