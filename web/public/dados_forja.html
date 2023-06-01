@@ -36,7 +36,7 @@
                         <div>
                             <input type="checkbox" id="condicao1" value="minhas" onclick="teste()">Ver as minhas cartas
                         </div><br>
-                        <div>
+                        <div style="overflow-y: scroll; height:70vh;">
                             <ul id="lista_ul">
                             </ul>
                         </div>
@@ -153,7 +153,7 @@
             if(check){
                 lista_ul.innerHTML += `
                     <li onmouseover="mudar_carta('${json[i].nome}','${json[i].custo}','${json[i].tipo}',
-                                        '${String(json[i].texto).replaceAll(/(\r\n|\n|\r|"|')/gm, "")}', '${json[i].poder}','${json[i].resist}',
+                                        '${String(json[i].texto).replaceAll(/(\r\n|\n|\r|"|')/gm, "_")}', '${json[i].poder}','${json[i].resist}',
                                         '${json[i].cor}','${json[i].tipoEstrutura}')">
                         Nome:${json[i].nome}, Tipo:${json[i].tipo}
                     </li>
