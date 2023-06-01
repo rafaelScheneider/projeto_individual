@@ -61,7 +61,7 @@ li{
 .nome{
     position:absolute;
     top: 20.8vh;
-    left:55.5vw; 
+    left:56.1vw; 
     color: #ffffff00;
     height: 4.5vh;
     width: 17vw;
@@ -84,7 +84,7 @@ li{
 .tipo{
     position:absolute;
     top: 66.5vh;
-    left:55.5vw;
+    left:56.1vw;
     color: rgb(0, 0, 0);
     height: 4.5vh;
     width: 22.4vw;
@@ -94,7 +94,7 @@ li{
 .texto{
     position:absolute;
     top: 72vh;
-    left:55.5vw; 
+    left:56.1vw; 
     height: 21vh;
     width: 22.5vw;
     font-size: 3vh;

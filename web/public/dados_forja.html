@@ -153,7 +153,7 @@
             if(check){
                 lista_ul.innerHTML += `
                     <li onmouseover="mudar_carta('${json[i].nome}','${json[i].custo}','${json[i].tipo}',
-                                        '${String(json[i].texto).replaceAll(`"`, "")}', '${json[i].poder}','${json[i].resist}',
+                                        '${String(json[i].texto).replaceAll(/(\r\n|\n|\r|"|')/gm, "")}', '${json[i].poder}','${json[i].resist}',
                                         '${json[i].cor}','${json[i].tipoEstrutura}')">
                         Nome:${json[i].nome}, Tipo:${json[i].tipo}
                     </li>
