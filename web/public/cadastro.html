@@ -32,6 +32,7 @@
                 <span> Nome:</span> <input id="nome_ipt">
                 <span> Email:</span> <input id="email_ipt">
                 <span> Senha:</span> <input id="senha_ipt" type="password">
+                <span> Telefone:</span> <input id="telefone_ipt" type="number">
                 <button onclick="cadastrar()"> Finalizar cadastro </button>
             </div>
         </div>
@@ -69,7 +70,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nome_ipt.value,
                 emailServer: email_ipt.value,
-                senhaServer: senha_ipt.value
+                senhaServer: senha_ipt.value,
+                telefoneServer: telefone_ipt.value
             })
         }).then(function (resposta) {
             console.log("resposta: ", resposta);

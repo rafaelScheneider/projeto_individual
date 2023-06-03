@@ -16,3 +16,7 @@ cor: varchar(20),
 poder SMALLINT,
 resist SMALLINT,
 efeito: varchar(100)
+
+Tebel Telefone:
+fkIduser int foreign key idUser
+telefone bigint

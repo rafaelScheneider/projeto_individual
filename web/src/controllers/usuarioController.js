@@ -6,9 +6,11 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer
     var email = req.body.emailServer
     var senha = req.body.senhaServer
+    var telefone = req.body.telefoneServer
 
     usuarioModel.cadastrar(nome, email, senha).then(
         function (resultado) {
+            usuarioModel.cadastrar_tel(telefone)
             res.json(resultado);
         }
     ).catch(

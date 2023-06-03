@@ -26,3 +26,9 @@ CREATE TABLE carta (
   texto VARCHAR(400),
   FOREIGN KEY (FkUser) REFERENCES user(idUser)
 );
+
+CREATE TABLE Telefone (
+	fkIduser int,
+	telefone bigint,
+	foreign key (fkIduser) REFERENCES user(idUser)
+)
